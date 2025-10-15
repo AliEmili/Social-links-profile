@@ -16,29 +16,158 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      :root {
+        --grey-700: hsl(0, 0%, 20%);
+        --grey-800: hsl(0, 0%, 12%);
+        --grey-900: hsl(0, 0%, 8%);
+
+        --white: hsl(0, 0%, 100%);
+        --green: hsl(75, 94%, 57%);
+
+        --font-weight-regular: 400;
+        --font-weight-bold: 600;
+        --font-weight-bolder: 700;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url(./assets/fonts/Inter-VariableFont_slnt\wght.ttf);
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 10px;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: var(--grey-900);
+        color: var(--white);
+        min-height: 100dvh;
+        font-size: 1.4rem;
+        font-weight: var(--font-weight-regular);
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background-color: var(--grey-800);
+        width: 360px;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem;
+      }
+
+      .image-container {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+      }
+
+      .name {
+        font-size: 2rem;
+        font-weight: var(--font-weight-bolder);
+        margin-top: 2rem;
+      }
+
+      .location {
+        color: var(--green);
+        font-weight: var(--font-weight-bold);
+        margin-top: 2rem;
+      }
+
+      .job-description {
+        font-weight: var(--font-weight-regular);
+        margin-top: 4rem;
+      }
+
+      .socials-container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .social-media {
+        width: 100%;
+        background-color: var(--grey-700);
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--white);
+        text-decoration: none;
+        text-align: center;
+        font-weight: var(--font-weight-bold);
+      }
+
+      .social-media:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: var(--green);
+        color: var(--grey-900);
+      }
+
       .attribution {
         font-size: 11px;
         text-align: center;
+        margin-top: auto;
+        flex-shrink: 0;
+        flex-grow: 0;
       }
+
       .attribution a {
+        background-color: var(--grey-700);
         color: hsl(228, 45%, 44%);
       }
     </style>
   </head>
   <body>
-    <figure>
-      <img src="./assets/images/avatar-jessica.jpeg" alt="Profile picture" />
-    </figure>
+    <main>
+      <div class="card">
+        <figure class="image-container">
+          <img
+            src="./assets/images/avatar-jessica.jpeg"
+            alt="Profile picture"
+          />
+        </figure>
 
-    <div>Jessica Randall</div>
-    <div>London, United Kingdom</div>
-    <p>"Front-end developer and avid reader."</p>
+        <div class="name">Jessica Randall</div>
+        <div class="location">London, United Kingdom</div>
+        <p class="job-description">"Front-end developer and avid reader."</p>
 
-    <a href="">GitHub</a>
-    <a href="">Frontend Mentor</a>
-    <a href="">LinkedIn</a>
-    <a href="">Twitter</a>
-    <a href="">Instagram</a>
+        <div class="socials-container">
+          <a class="social-media" href="#">GitHub</a>
+          <a class="social-media" href="#">Frontend Mentor</a>
+          <a class="social-media" href="#">LinkedIn</a>
+          <a class="social-media" href="#">Twitter</a>
+          <a class="social-media" href="#">Instagram</a>
+        </div>
+      </div>
+    </main>
 
     <div class="attribution">
       Challenge by
